@@ -9,6 +9,7 @@ public class DataManager : MonoBehaviour
     public int SeedCount;
     public int MaxSeed;
     public GameObject NowShowPopUp;
+    public GameObject NowInMenu;
     public bool LevelUpBool=false;
     // Start is called before the first frame update
     void Start()
