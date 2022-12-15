@@ -24,7 +24,7 @@ public class TabScript : MonoBehaviour
 
             pointerID = -1; //PC나 유니티 상에서는 -1
 
-            #elif UNITY_IOS || UNITY_IPHONE
+            #elif UNITY_IOS || UNITY_IPHONE || UNITY_ANDROID
 
             pointerID = 0;  // 휴대폰이나 이외에서 터치 상에서는 0 
 

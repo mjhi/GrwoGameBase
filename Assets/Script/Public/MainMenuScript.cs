@@ -5,14 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MainMenuScript : MonoBehaviour
 {
-    public GameObject SetPlayerNameUI;
-    public InputField SetName;
-    public GameObject NameConfirmBtn;
-    bool IsSave;
     // Start is called before the first frame update
     void Start()
     {
-        IsSave = PlayerPrefs.HasKey("saved_game");
+        
         
         
     }
@@ -29,21 +25,12 @@ public class MainMenuScript : MonoBehaviour
             pointerID = 0;  // 휴대폰이나 이외에서 터치 상에서는 0 
             #endif
 
-            if(!IsSave){
-                SetPlayerNameUI.SetActive(true);
-                
-            }
-            else{
+            
                 SceneManager.LoadScene("Main");
-            }
+           
             
             
 	        
         }
-    }
-    public void SetNameBtnClick()
-    {
-        PlayerPrefs.SetString("name",SetName.text);
-        SceneManager.LoadScene("Main");
     }
 }

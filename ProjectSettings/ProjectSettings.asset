@@ -246,7 +246,8 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/MYOUNGJUN/Desktop/Android Key/GrowHam.keystore
+  AndroidKeystoreName: "C:/Users/MYOUNGJUN/Desktop/\uAC8C\uC784\uC791\uC5C5\uD30C\uC77C/Android
+    Key/GrowHam.keystore"
   AndroidKeyaliasName: growhamsterkey
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0

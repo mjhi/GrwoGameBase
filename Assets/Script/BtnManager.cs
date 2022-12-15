@@ -35,41 +35,38 @@ public class BtnManager : MonoBehaviour
     }
     public void ClickAtten()
     {
-        if(EventSystem.current.IsPointerOverGameObject())
-	    {  
+         
 	         //클릭 처리
             
             print("출석체크!");
 
-	    }
+	    
         
  
 	         
     }
     public void ClickUpgrade()
     {
-        if(EventSystem.current.IsPointerOverGameObject())
-	    {  
+        
 	         //클릭 처리
             
             Data.NowShowPopUp=UpgradePopup;
             UpgradePopup.SetActive(true);
 
-	    }
+	    
         
             
             
     }
     public void ClickBurp()
     {
-        if(EventSystem.current.IsPointerOverGameObject())
-	    {  
+        
 	         //클릭 처리
             
             Data.NowShowPopUp=BurpPopup;
             BurpPopup.SetActive(true);
 
-	    }
+	    
             
         
         
@@ -90,7 +87,7 @@ public class BtnManager : MonoBehaviour
         {
             
             BackgroundMenu.SetActive(false);
-            Data.NowInMenu=GameObject.Find("Temporary");
+            // Data.NowInMenu=GameObject.Find("Temporary");
         }
         else
         {
@@ -106,7 +103,7 @@ public class BtnManager : MonoBehaviour
         if(CosteumMenu.activeSelf==true)
         {
             CosteumMenu.SetActive(false);
-            Data.NowInMenu=GameObject.Find("Temporary");
+            // Data.NowInMenu=GameObject.Find("Temporary");
         }
         else
         {
@@ -121,7 +118,7 @@ public class BtnManager : MonoBehaviour
     {
         Data.NowShowPopUp.SetActive(false);
         Data.NowShowPopUp=GameObject.Find("Temporary");
-        
+        Data.NowInMenu=GameObject.Find("Temporary");
     }
     public void AutoSeed()
     {

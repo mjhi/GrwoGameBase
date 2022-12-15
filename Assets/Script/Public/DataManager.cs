@@ -58,7 +58,7 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.SetInt("SeedCount",SeedCount);
         PlayerPrefs.SetInt("MaxCount",MaxSeed);
         PlayerPrefs.SetInt("LevelUp",System.Convert.ToInt16(LevelUpBool));
-
+        
         PlayerPrefs.SetString("PopUp",NowShowPopUp.name);
         PlayerPrefs.SetString("Menu",NowInMenu.name);
     }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
-public class GameUtility
+public class GameUtility : MonoBehaviour
 {
     [MenuItem("GameUtility/Clear All SaveData")]
     static void ClearAllSaveData()
