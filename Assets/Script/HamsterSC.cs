@@ -27,5 +27,6 @@ public class HamsterSC : MonoBehaviour
     void OnMouseDown() {
         Instantiate(Seed,spawnPosition.position,spawnPosition.rotation);   
     }
+    
 
 }

@@ -24,7 +24,7 @@ public class SeedScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag=="Player"){
-            Data.SeedCount+=1;
+            Data.SeedCount+=Data.SeedCountPW;
             Destroy(gameObject);
             HamSC.EatBool=true;
             // animator.SetBool("Eat",true);

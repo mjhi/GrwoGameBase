@@ -32,9 +32,13 @@ public class TabScript : MonoBehaviour
 	        if(!EventSystem.current.IsPointerOverGameObject(pointerID))
 	        {  
 	         //클릭 처리
-             Instantiate(Seed,spawnPosition.position,spawnPosition.rotation);
+             SeedDrop();
 
 	        }
         }
+    }
+    public void SeedDrop()
+    {
+        Instantiate(Seed,spawnPosition.position,spawnPosition.rotation);
     }
 }

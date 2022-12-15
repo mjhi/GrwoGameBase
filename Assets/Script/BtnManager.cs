@@ -10,19 +10,28 @@ public class BtnManager : MonoBehaviour
     public GameObject BurpPopup;
     public GameObject BackgroundMenu;
     public GameObject CosteumMenu;
+    public GameObject SettingPopup;
+    public GameObject Tempo;
     public DataManager Data;
     public TabScript TabSC;
+    public void SeedCountPWDown()
+    {
+        Data.SeedCountPW/=2;
+    }
     // Start is called before the first frame update
     void Start()
     {
         Data = FindObjectOfType<DataManager>();
         TabSC= FindObjectOfType<TabScript>();
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Tempo.activeSelf==false){
+            Tempo.SetActive(true);
+        }
     }
     public void ClickAtten()
     {
@@ -51,8 +60,6 @@ public class BtnManager : MonoBehaviour
             
             
     }
-        
-    
     public void ClickBurp()
     {
         if(EventSystem.current.IsPointerOverGameObject())
@@ -83,6 +90,7 @@ public class BtnManager : MonoBehaviour
         {
             
             BackgroundMenu.SetActive(false);
+            Data.NowInMenu=GameObject.Find("Temporary");
         }
         else
         {
@@ -98,6 +106,7 @@ public class BtnManager : MonoBehaviour
         if(CosteumMenu.activeSelf==true)
         {
             CosteumMenu.SetActive(false);
+            Data.NowInMenu=GameObject.Find("Temporary");
         }
         else
         {
@@ -108,11 +117,39 @@ public class BtnManager : MonoBehaviour
 
         
     }
-
     public void ClosePOP()
     {
         Data.NowShowPopUp.SetActive(false);
+        Data.NowShowPopUp=GameObject.Find("Temporary");
         
     }
-
+    public void AutoSeed()
+    {
+        TabSC.SeedDrop();
+    }
+    public void AutoCancel()
+    {
+        CancelInvoke("AutoSeed");
+    }
+    public void AutoBurf()
+    {
+        
+        InvokeRepeating("AutoSeed", 1, 1f);
+        Invoke("AutoCancel",60f);
+        
+        
+    }
+    public void DoubleBurf()
+    {
+        Data.SeedCountPW*=2;
+        Invoke("SeedCountPWDown",60);
+    }
+    public void ClickSetting()
+    {
+        Data.NowShowPopUp.SetActive(false);
+        SettingPopup.SetActive(true);
+        Data.NowShowPopUp=SettingPopup;
+        
+        
+    }
 }
