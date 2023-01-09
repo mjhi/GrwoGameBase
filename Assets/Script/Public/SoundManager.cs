@@ -7,6 +7,10 @@ public class SoundManager : MonoBehaviour
     public AudioSource musicsource;
     public Slider BGMSlider;
     public float BGMsoundValue;
+    public Sprite YesSound;
+    public Sprite NoSound;
+    public float BeforeBGMVolume;
+    public GameObject BGMbtn;
     bool IsSave;
     void Start()
     {
@@ -30,6 +34,22 @@ public class SoundManager : MonoBehaviour
     {
         musicsource.volume = volume;
         PlayerPrefs.SetFloat("BGMvolume",volume);
+    }
+    public void ClickBGMbtn()
+    {
+        if(musicsource.volume>0)
+        {
+            BeforeBGMVolume=musicsource.volume;
+            BGMbtn.GetComponent<Image>().sprite=NoSound;
+            BGMSlider.value=0;
+            SetMusicVolum(0);
+        }
+        else if(musicsource.volume==0){
+            BGMbtn.GetComponent<Image>().sprite=YesSound;
+            BGMSlider.value=BeforeBGMVolume;
+            SetMusicVolum(BeforeBGMVolume);
+        }
+        
     }
 
 }

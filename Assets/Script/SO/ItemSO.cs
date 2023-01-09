@@ -15,5 +15,9 @@ public class ItemInfo
 public class ItemSO : ScriptableObject
 {
     public ItemInfo[] BackgroundItem;
-    public ItemInfo[] CosteumItem;
+    public ItemInfo[] AccessoriesShopInfo;
+    public ItemInfo[] DressShopInfo;
+    public ItemInfo[] HairShopInfo;
+    public ItemInfo[] HatShopInfo;
+    public ItemInfo[] LevelUpShopInfo;
 }

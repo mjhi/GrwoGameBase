@@ -2,27 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 public class BtnManager : MonoBehaviour
 {
     public GameObject AttendanceBtn;
-    public GameObject BurpBtn;
-    public GameObject UpgradePopup;
     public GameObject BurpPopup;
+    public GameObject UpgradePopup;
+    public GameObject LevelUpMenu;
     public GameObject BackgroundMenu;
     public GameObject CosteumMenu;
     public GameObject SettingPopup;
+    public GameObject TutoPoP;
     public GameObject Tempo;
     public DataManager Data;
     public TabScript TabSC;
-    public void SeedCountPWDown()
-    {
-        Data.SeedCountPW/=2;
-    }
+    public GameObject popupBack;
+    
     // Start is called before the first frame update
     void Start()
     {
         Data = FindObjectOfType<DataManager>();
         TabSC= FindObjectOfType<TabScript>();
+        
+        popupBack=GameObject.Find("PopUpParent").transform.Find("BackGroundPop").gameObject;
     
     }
 
@@ -34,51 +36,35 @@ public class BtnManager : MonoBehaviour
         }
     }
     public void ClickAtten()
-    {
-         
-	         //클릭 처리
-            
-            print("출석체크!");
-
-	    
-        
- 
-	         
+    {    
+	         //클릭 처리       
+            print("출석체크!");        
     }
     public void ClickUpgrade()
     {
-        
-	         //클릭 처리
-            
             Data.NowShowPopUp=UpgradePopup;
-            UpgradePopup.SetActive(true);
-
-	    
-        
-            
-            
+            UpgradePopup.SetActive(true);     
+            popupBack.SetActive(true); 
     }
     public void ClickBurp()
     {
-        
-	         //클릭 처리
-            
             Data.NowShowPopUp=BurpPopup;
-            BurpPopup.SetActive(true);
-
-	    
-            
-        
-        
+            BurpPopup.SetActive(true);   
+            popupBack.SetActive(true);
     }
     public void LevelUp()
     {
-        if(Data.LevelUpBool){
-            if(Data.SeedCount!=100000){
-                Data.MaxSeed*=2;
-                Data.SeedCount=0;
-            }
+        if(LevelUpMenu.activeSelf==true)
+        {
             
+            LevelUpMenu.SetActive(false);
+            // Data.NowInMenu=GameObject.Find("Temporary");
+        }
+        else
+        {
+            Data.NowInMenu.SetActive(false);
+            LevelUpMenu.SetActive(true);
+            Data.NowInMenu=LevelUpMenu;
         }
     }
     public void ClickBackground()
@@ -119,34 +105,26 @@ public class BtnManager : MonoBehaviour
         Data.NowShowPopUp.SetActive(false);
         Data.NowShowPopUp=GameObject.Find("Temporary");
         Data.NowInMenu=GameObject.Find("Temporary");
+        popupBack.SetActive(false);
     }
-    public void AutoSeed()
-    {
-        TabSC.SeedDrop();
-    }
+    
     public void AutoCancel()
     {
         CancelInvoke("AutoSeed");
     }
-    public void AutoBurf()
-    {
-        
-        InvokeRepeating("AutoSeed", 1, 1f);
-        Invoke("AutoCancel",60f);
-        
-        
-    }
-    public void DoubleBurf()
-    {
-        Data.SeedCountPW*=2;
-        Invoke("SeedCountPWDown",60);
-    }
+
     public void ClickSetting()
     {
-        Data.NowShowPopUp.SetActive(false);
+        
         SettingPopup.SetActive(true);
         Data.NowShowPopUp=SettingPopup;
-        
-        
+        popupBack.SetActive(true);    
     }
+    
+    public void NameSET()
+    {
+        Data.SetName();
+        TutoPoP.SetActive(false);
+    }
+    
 }

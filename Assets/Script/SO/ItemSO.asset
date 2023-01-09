@@ -41,4 +41,32 @@ MonoBehaviour:
     Description: "\uCD08\uC6D0(\u8349\u539F, Grassland)\uC740 \uD480\uC774 \uB098
       \uC788\uB294 \uB4E4\uD310\uC744 \uB9D0\uD55C\uB2E4."
     icon: {fileID: 21300000, guid: b8ee3ea38e48b9847a19fee13d965ad5, type: 3}
-  CosteumItem: []
+  AccessoriesShopInfo: []
+  DressShopInfo: []
+  HairShopInfo:
+  - name: "1\uBC88\uBA38\uB9AC"
+    price: 50
+    Description: "1\uBC88\uBA38\uB9AC\uC774\uB2E4."
+    icon: {fileID: 21300000, guid: d66658d5e64dcfa4181ec407dfa91725, type: 3}
+  - name: "2\uBC88\uBA38\uB9AC"
+    price: 100
+    Description: "2\uBC88\uBA38\uB9AC\uC774\uB2E4."
+    icon: {fileID: 21300000, guid: b133c511bd6d39046997b4f4b2da765b, type: 3}
+  - name: "3\uBC88\uBA38\uB9AC"
+    price: 150
+    Description: "3\uBC88\uBA38\uB9AC\uC774\uB2E4."
+    icon: {fileID: 21300000, guid: 3b67e2008b7ebba4896fd1106eadebd1, type: 3}
+  - name: "4\uBC88\uBA38\uB9AC"
+    price: 200
+    Description: "4\uBC88\uBA38\uB9AC\uC774\uB2E4."
+    icon: {fileID: 21300000, guid: d8476fd7ea44c8344bca2db46765a701, type: 3}
+  - name: "5\uBC88\uBA38\uB9AC"
+    price: 250
+    Description: "5\uBC88\uBA38\uB9AC\uC774\uB2E4."
+    icon: {fileID: 21300000, guid: b324e94bfac100e4e8cc3f63dde8a3ba, type: 3}
+  HatShopInfo: []
+  LevelUpShopInfo:
+  - name: "1\uB808\uBCA8"
+    price: 50
+    Description: "1\uB808\uBCA8\uC774\uB2E4."
+    icon: {fileID: 21300000, guid: af40e18f7e5f72b4b848b09b79a480cc, type: 3}
